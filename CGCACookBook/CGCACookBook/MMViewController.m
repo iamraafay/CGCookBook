@@ -117,6 +117,10 @@
 
 #pragma mark - MMDetailViewControllerDelegate 
 
+- (void)mmDetailViewController:(MMDetailViewController *)detailsVC {
+    
+}
+
 - (void)mmDetailViewController:(MMDetailViewController *)detailsVC
                    didPopedOut:(BOOL)popped {
     
