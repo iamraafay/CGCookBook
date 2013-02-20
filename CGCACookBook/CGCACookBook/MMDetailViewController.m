@@ -29,6 +29,19 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    if ([self.delegate respondsToSelector:@selector(mmDetailViewController:)]) {
+        [self.delegate performSelector:@selector(mmDetailViewController:) withObject:self];
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(mmDetailViewController:didPopedOut:)]) {
+        [self.delegate mmDetailViewController:self didPopedOut:YES];
+    }
+
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
