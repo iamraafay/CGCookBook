@@ -7,6 +7,7 @@
 //
 
 #import "MMDetailViewController.h"
+#import "MMPathView.h"
 
 @interface MMDetailViewController ()
 
@@ -27,6 +28,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    MMPathView *pathView = [[MMPathView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:pathView];
+    
+    [pathView setNeedsDisplay];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {

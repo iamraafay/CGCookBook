@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		61764C3B16D4B700000688A1 /* MMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61764C3916D4B700000688A1 /* MMDetailViewController.m */; };
 		61764C3C16D4B700000688A1 /* MMDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61764C3A16D4B700000688A1 /* MMDetailViewController.xib */; };
+		61BAF7EE16D6593B00D2D6C8 /* MMPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BAF7ED16D6593B00D2D6C8 /* MMPathView.m */; };
 		61F43D6016D38CC0008F443C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61F43D5F16D38CC0008F443C /* UIKit.framework */; };
 		61F43D6216D38CC0008F443C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61F43D6116D38CC0008F443C /* Foundation.framework */; };
 		61F43D6416D38CC0008F443C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61F43D6316D38CC0008F443C /* CoreGraphics.framework */; };
@@ -26,6 +27,8 @@
 		61764C3816D4B700000688A1 /* MMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDetailViewController.h; sourceTree = "<group>"; };
 		61764C3916D4B700000688A1 /* MMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDetailViewController.m; sourceTree = "<group>"; };
 		61764C3A16D4B700000688A1 /* MMDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMDetailViewController.xib; sourceTree = "<group>"; };
+		61BAF7EC16D6593B00D2D6C8 /* MMPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPathView.h; sourceTree = "<group>"; };
+		61BAF7ED16D6593B00D2D6C8 /* MMPathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPathView.m; sourceTree = "<group>"; };
 		61F43D5C16D38CC0008F443C /* CGCACookBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CGCACookBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61F43D5F16D38CC0008F443C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		61F43D6116D38CC0008F443C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		61BAF7EB16D6592400D2D6C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				61BAF7EC16D6593B00D2D6C8 /* MMPathView.h */,
+				61BAF7ED16D6593B00D2D6C8 /* MMPathView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		61F43D5316D38CC0008F443C = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +100,7 @@
 		61F43D6516D38CC0008F443C /* CGCACookBook */ = {
 			isa = PBXGroup;
 			children = (
+				61BAF7EB16D6592400D2D6C8 /* Views */,
 				61F43D6E16D38CC0008F443C /* MMAppDelegate.h */,
 				61F43D6F16D38CC0008F443C /* MMAppDelegate.m */,
 				61F43D7716D38CC0008F443C /* MMViewController.h */,
@@ -187,6 +200,7 @@
 				61F43D7016D38CC0008F443C /* MMAppDelegate.m in Sources */,
 				61F43D7916D38CC0008F443C /* MMViewController.m in Sources */,
 				61764C3B16D4B700000688A1 /* MMDetailViewController.m in Sources */,
+				61BAF7EE16D6593B00D2D6C8 /* MMPathView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
