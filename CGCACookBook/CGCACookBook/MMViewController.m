@@ -7,6 +7,7 @@
 //
 
 #import "MMViewController.h"
+#import "MMDrawingBoardViewController.h"
 #import "MMDetailViewController.h"
 
 @interface MMViewController () <MMDetailViewControllerDelegate>
