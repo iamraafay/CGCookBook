@@ -61,13 +61,24 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 2;
+    
+    switch (section) {
+        case 0:
+            return 2;
+            break;
+        case 1:
+            return 0;
+        default:
+            break;
+    }
+    
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -82,18 +93,53 @@
     
     // Configure the cell...
     
-    switch (indexPath.row) {
+    switch (indexPath.section) {
         case 0:
-            cell.textLabel.text = @"Linear Paths";
+            switch (indexPath.row) {
+                case 0:
+                    cell.textLabel.text = @"Linear Paths";
+                    break;
+                case 1:
+                    cell.textLabel.text = @"Shapes";
+                default:
+                    break;
+            }
+            
             break;
         case 1:
-            cell.textLabel.text = @"Shapes";
+            
+            switch (indexPath.row) {
+                case 0:
+                    //TODO: CoreGraphics Example
+                    break;
+                    
+                default:
+                    break;
+            }
+            
             break;
         default:
             break;
     }
     
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section; {
+    
+    switch (section) {
+        case 0:
+            return @"UIKit";
+            break;
+        case 1:
+            return @"CoreGraphics";
+            break;
+            
+        default:
+            break;
+    }
+    
+    return @"Paths";
 }
 
 /*
