@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6110ED3616DF5883008BA70C /* MMCGPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6110ED3516DF5883008BA70C /* MMCGPathView.m */; };
+		6110ED3A16E4D12A008BA70C /* MMCGPathShapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6110ED3916E4D12A008BA70C /* MMCGPathShapeView.m */; };
 		61764C3B16D4B700000688A1 /* MMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61764C3916D4B700000688A1 /* MMDetailViewController.m */; };
 		61764C3C16D4B700000688A1 /* MMDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61764C3A16D4B700000688A1 /* MMDetailViewController.xib */; };
 		61BAF7EE16D6593B00D2D6C8 /* MMPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BAF7ED16D6593B00D2D6C8 /* MMPathView.m */; };
@@ -27,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6110ED3416DF5883008BA70C /* MMCGPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCGPathView.h; sourceTree = "<group>"; };
+		6110ED3516DF5883008BA70C /* MMCGPathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCGPathView.m; sourceTree = "<group>"; };
+		6110ED3816E4D129008BA70C /* MMCGPathShapeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCGPathShapeView.h; sourceTree = "<group>"; };
+		6110ED3916E4D12A008BA70C /* MMCGPathShapeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCGPathShapeView.m; sourceTree = "<group>"; };
 		61764C3816D4B700000688A1 /* MMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDetailViewController.h; sourceTree = "<group>"; };
 		61764C3916D4B700000688A1 /* MMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDetailViewController.m; sourceTree = "<group>"; };
 		61764C3A16D4B700000688A1 /* MMDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMDetailViewController.xib; sourceTree = "<group>"; };
@@ -84,6 +90,10 @@
 				61BAF7ED16D6593B00D2D6C8 /* MMPathView.m */,
 				61DFDDC316DCDF6500182329 /* MMPathShapeView.h */,
 				61DFDDC416DCDF6500182329 /* MMPathShapeView.m */,
+				6110ED3416DF5883008BA70C /* MMCGPathView.h */,
+				6110ED3516DF5883008BA70C /* MMCGPathView.m */,
+				6110ED3816E4D129008BA70C /* MMCGPathShapeView.h */,
+				6110ED3916E4D12A008BA70C /* MMCGPathShapeView.m */,
 			);
 			name = "Paths & Shapes";
 			sourceTree = "<group>";
@@ -225,6 +235,8 @@
 				61BAF7EE16D6593B00D2D6C8 /* MMPathView.m in Sources */,
 				61DFDDC016DCD93300182329 /* MMDrawingBoardViewController.m in Sources */,
 				61DFDDC516DCDF6500182329 /* MMPathShapeView.m in Sources */,
+				6110ED3616DF5883008BA70C /* MMCGPathView.m in Sources */,
+				6110ED3A16E4D12A008BA70C /* MMCGPathShapeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

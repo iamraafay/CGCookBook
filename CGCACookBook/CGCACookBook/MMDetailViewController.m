@@ -73,7 +73,7 @@
             return 2;
             break;
         case 1:
-            return 0;
+            return 1;
         default:
             break;
     }
@@ -87,7 +87,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         
     }
     
@@ -110,7 +110,8 @@
             
             switch (indexPath.row) {
                 case 0:
-                    //TODO: CoreGraphics Example
+                    cell.textLabel.text = @"Liner Paths";
+                    cell.detailTextLabel.text = @"CGContext";
                     break;
                     
                 default:

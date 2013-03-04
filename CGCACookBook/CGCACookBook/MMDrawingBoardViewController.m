@@ -9,6 +9,7 @@
 #import "MMDrawingBoardViewController.h"
 #import "MMPathView.h"
 #import "MMPathShapeView.h"
+#import "MMCGPathView.h"
 
 @interface MMDrawingBoardViewController ()
 
@@ -44,18 +45,47 @@
     MMPathView *pathView = nil;
     MMPathShapeView *pathShapeView = nil;
     
-    switch (self.comingFromIndexPath.row) {
+    MMCGPathView *cgPathView = nil;
+    
+    
+    switch (self.comingFromIndexPath.section) {
         case 0:
-            pathView = [[MMPathView alloc] initWithFrame:self.view.frame];
-            [self.view addSubview:pathView];
+            
+            switch (self.comingFromIndexPath.row) {
+                case 0:
+                    pathView = [[MMPathView alloc] initWithFrame:self.view.frame];
+                    [self.view addSubview:pathView];
+                    break;
+                case 1:
+                    pathShapeView = [[MMPathShapeView alloc] initWithFrame:self.view.frame];
+                    [self.view addSubview:pathShapeView];
+                    break;
+                default:
+                    break;
+            }
+            
             break;
+            
         case 1:
-            pathShapeView = [[MMPathShapeView alloc] initWithFrame:self.view.frame];
-            [self.view addSubview:pathShapeView];
+            
+            switch (self.comingFromIndexPath.row) {
+                case 0:
+                    cgPathView = [[MMCGPathView alloc] initWithFrame:self.view.frame];
+                    [self.view addSubview:cgPathView];
+                    break;
+                case 1:
+                    
+                    break;
+                default:
+                    break;
+            }
+            
             break;
+            
         default:
             break;
     }
+    
     
     [pathView setNeedsDisplay];
 }

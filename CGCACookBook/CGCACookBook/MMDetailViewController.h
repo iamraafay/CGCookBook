@@ -17,7 +17,10 @@
 
 @protocol MMDetailViewControllerDelegate <NSObject>
 
+@optional
 - (void)mmDetailViewController:(MMDetailViewController *)detailsVC;
+
+@required
 - (void)mmDetailViewController:(MMDetailViewController *)detailsVC didPopedOut:(BOOL)popped;
 
 @end
