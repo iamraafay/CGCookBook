@@ -1,31 +1,53 @@
 //
-//  MMViewController.m
+//  MMDetailViewController.m
 //  CGCACookBook
 //
-//  Created by Mohammad Abdurraafay on 19/02/13.
+//  Created by Mohammad Abdurraafay on 20/02/13.
 //  Copyright (c) 2013 Mohammad Abdurraafay. All rights reserved.
 //
 
-#import "MMViewController.h"
-#import "MMDrawingBoardViewController.h"
 #import "MMDetailViewController.h"
+#import "MMDrawingBoardViewController.h"
 
-@interface MMViewController () <MMDetailViewControllerDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface MMDetailViewController () <MMDrawingBoardViewControllerDelegate>
+
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation MMViewController
+@implementation MMDetailViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    if ([self.delegate respondsToSelector:@selector(mmDetailViewController:)]) {
+        [self.delegate performSelector:@selector(mmDetailViewController:) withObject:self];
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(mmDetailViewController:didPopedOut:)]) {
+        [self.delegate mmDetailViewController:self didPopedOut:YES];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,12 +61,23 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+    
+    switch (section) {
+        case 0:
+            return 2;
+            break;
+        case 1:
+            return 1;
+        default:
+            break;
+    }
+    
     return 1;
 }
 
@@ -54,13 +87,60 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         
     }
     
-    cell.textLabel.text = @"Path";
+    // Configure the cell...
+    
+    switch (indexPath.section) {
+        case 0:
+            switch (indexPath.row) {
+                case 0:
+                    cell.textLabel.text = @"Linear Paths";
+                    break;
+                case 1:
+                    cell.textLabel.text = @"Shapes";
+                default:
+                    break;
+            }
+            
+            break;
+        case 1:
+            
+            switch (indexPath.row) {
+                case 0:
+                    cell.textLabel.text = @"Liner Paths";
+                    cell.detailTextLabel.text = @"CGContext";
+                    break;
+                    
+                default:
+                    break;
+            }
+            
+            break;
+        default:
+            break;
+    }
     
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section; {
+    
+    switch (section) {
+        case 0:
+            return @"UIKit";
+            break;
+        case 1:
+            return @"CoreGraphics";
+            break;
+            
+        default:
+            break;
+    }
+    
+    return @"Paths";
 }
 
 /*
@@ -107,8 +187,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
+    
     self.selectedIndexPath = indexPath;
-    MMDetailViewController *detailViewController = [[MMDetailViewController alloc] initWithNibName:@"MMDetailViewController" bundle:nil];
+    MMDrawingBoardViewController *detailViewController = [[MMDrawingBoardViewController alloc] initWithSelectedIndex:indexPath];
     detailViewController.delegate = self;
     // ...
     // Pass the selected object to the new view controller.
@@ -116,14 +197,7 @@
     
 }
 
-#pragma mark - MMDetailViewControllerDelegate 
-
-- (void)mmDetailViewController:(MMDetailViewController *)detailsVC {
-    
-}
-
-- (void)mmDetailViewController:(MMDetailViewController *)detailsVC
-                   didPopedOut:(BOOL)popped {
+-(void)mmDrawingBoardViewController:(MMDrawingBoardViewController *)detailsVC didPopedOut:(BOOL)popped {
     
     [_tableView deselectRowAtIndexPath:_selectedIndexPath animated:YES];
 }
