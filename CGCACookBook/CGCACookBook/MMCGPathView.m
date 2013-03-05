@@ -35,6 +35,7 @@
     CGContextAddLineToPoint(context, 250., 50.);
     CGContextStrokePath(context);
     
+    CGContextSetStrokeColorWithColor(context, [[UIColor orangeColor] CGColor]);
     CGContextMoveToPoint(context, 10., 100.);
     CGContextAddLineToPoint(context, 250., 100.);
     CGContextStrokePath(context);
@@ -48,9 +49,8 @@
         CGPointMake(60., 200.),
         CGPointMake(74., 180.),
     };
-    
+    CGContextSetStrokeColorWithColor(context, [[UIColor redColor] CGColor]);
     CGContextAddLines(context, points, sizeof(points)/sizeof(points[0]));
-    
     CGContextStrokePath(context);
     
     CGPoint rightAngPoint[] = {
@@ -59,7 +59,7 @@
         CGPointMake(150., 150.),
         CGPointMake(150., 202.),
     };
-    
+    CGContextSetStrokeColorWithColor(context, [[UIColor orangeColor] CGColor]);
     CGContextAddLines(context, rightAngPoint, sizeof(rightAngPoint)/sizeof(rightAngPoint[0]));
     CGContextStrokePath(context);
     
