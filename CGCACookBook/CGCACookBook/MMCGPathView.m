@@ -46,12 +46,21 @@
         CGPointMake(95., 150.),
         CGPointMake(130., 200.),
         CGPointMake(60., 200.),
+        CGPointMake(74., 180.),
     };
-    
-    NSLog(@"%ld", sizeof(points)/sizeof(points[0]));
     
     CGContextAddLines(context, points, sizeof(points)/sizeof(points[0]));
     
+    CGContextStrokePath(context);
+    
+    CGPoint rightAngPoint[] = {
+        CGPointMake(150., 200.),
+        CGPointMake(200., 200.),
+        CGPointMake(150., 150.),
+        CGPointMake(150., 202.),
+    };
+    
+    CGContextAddLines(context, rightAngPoint, sizeof(rightAngPoint)/sizeof(rightAngPoint[0]));
     CGContextStrokePath(context);
     
 }
