@@ -63,6 +63,28 @@
     CGContextAddLines(context, rightAngPoint, sizeof(rightAngPoint)/sizeof(rightAngPoint[0]));
     CGContextStrokePath(context);
     
+    
+    CGPoint lineSegPoints[] = {
+        
+        CGPointMake(10., 300.),
+        CGPointMake(60., 220.),
+        CGPointMake(60., 300.),
+        CGPointMake(110., 220.),
+        
+    };
+    
+    CGContextStrokeLineSegments(context, lineSegPoints, sizeof(lineSegPoints)/sizeof(lineSegPoints[0]));
+    
+    CGContextMoveToPoint(context, 200., 300.);
+    CGPoint lineSegRightPoints[] = {
+        CGPointMake(200., 300.),
+        CGPointMake(150., 220.),
+        CGPointMake(250., 300.),
+        CGPointMake(200., 220.),
+    };
+    CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
+    CGContextStrokeLineSegments(context, lineSegRightPoints, sizeof(lineSegRightPoints)/sizeof(lineSegPoints[0]));
+    
 }
 
 

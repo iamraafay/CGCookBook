@@ -73,7 +73,7 @@
             return 2;
             break;
         case 1:
-            return 1;
+            return 5;
         default:
             break;
     }
@@ -113,7 +113,26 @@
                     cell.textLabel.text = @"Liner Paths";
                     cell.detailTextLabel.text = @"CGContext";
                     break;
-                    
+                case 1:
+                    cell.textLabel.text = @"Shapes";
+                    cell.detailTextLabel.text = @"CGContext";
+                    break;
+                case 2:
+                    cell.textLabel.text = @"Patterns";
+                    cell.detailTextLabel.text = @"CGPattern";
+                    break;
+                case 3:
+                    cell.textLabel.text = @"Shadows";
+                    cell.detailTextLabel.text = @"####";
+                    break;
+                case 4:
+                    cell.textLabel.text = @"Gradients";
+                    cell.detailTextLabel.text = @"#####";
+                    break;
+                case 5:
+                    cell.textLabel.text = @"Transorms";
+                    cell.detailTextLabel.text = @"#####";
+                    break;
                 default:
                     break;
             }

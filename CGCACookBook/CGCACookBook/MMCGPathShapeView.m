@@ -74,7 +74,6 @@
     CGContextAddPath(context, straightPath);
     CGContextStrokePath(context);
     
-    CGContextRelease(context);
 }
 
 @end
