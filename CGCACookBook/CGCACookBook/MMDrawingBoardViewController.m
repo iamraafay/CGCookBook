@@ -14,6 +14,7 @@
 #import "MMCGPathShapeView.h"
 #import "MMCGPatternView.h"
 #import "MMCGShadowView.h"
+#import "MMCGGradients.h"
 
 @interface MMDrawingBoardViewController ()
 
@@ -55,6 +56,8 @@
     MMCGPatternView *cgPatternView = nil;
     MMCGShadowView *cgShadowView = nil;
     
+    MMCGGradients *cgGradientView = nil;
+    
     switch (self.comingFromIndexPath.section) {
         case 0:
             
@@ -93,7 +96,8 @@
                     [self.view addSubview:cgShadowView];
                     break;
                 case 4:
-                    //TODO:Gradients
+                    cgGradientView = [[MMCGGradients alloc] initWithFrame:self.view.frame];
+                    [self.view addSubview:cgGradientView];
                     break;
                 default:
                     break;
