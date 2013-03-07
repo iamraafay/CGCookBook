@@ -73,7 +73,7 @@
             return 2;
             break;
         case 1:
-            return 5;
+            return 6;
         default:
             break;
     }
@@ -130,7 +130,7 @@
                     cell.detailTextLabel.text = @"#####";
                     break;
                 case 5:
-                    cell.textLabel.text = @"Transorms";
+                    cell.textLabel.text = @"Shading";
                     cell.detailTextLabel.text = @"#####";
                     break;
                 default:

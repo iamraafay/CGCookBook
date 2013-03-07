@@ -43,19 +43,27 @@
                                (id)[[UIColor colorWithRed:29./255. green:156./255. blue:215./255. alpha:1.0] CGColor],
                                (id)[[UIColor colorWithRed:0.0 green:50./255. blue:126./255. alpha:1.0] CGColor]];
     
+    NSArray *arrayOfDifferentColors = @[(id)[[UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0] CGColor],
+                                        (id)[[UIColor colorWithRed:1.0 green:0.5 blue:0.0 alpha:1.0] CGColor],
+                                        (id)[[UIColor colorWithRed:1.0 green:0.75 blue:0.0 alpha:1.0] CGColor],
+                                        (id)[[UIColor colorWithRed:1.0 green:0.5 blue:0.0 alpha:1.0] CGColor],
+                                        (id)[[UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0] CGColor] ];
+    
     CGFloat locations[] = {
         0.0,
-        0.5,
+        0.25,
+//        0.50,
+//        0.75,
         1.0,
     };
     
-    CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)arrayOfColors, locations);
+    CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)arrayOfDifferentColors, locations);
     
     CGContextDrawLinearGradient(context,
                                 gradient,
-                                self.bounds.origin,
-                                CGPointMake(0.0, self.bounds.size.height),
-                                kCGGradientDrawsAfterEndLocation);
+                                self.frame.origin,
+                                CGPointMake(0.0, self.frame.size.height - 44.),
+                                kCGGradientDrawsBeforeStartLocation);
     
     CGContextRestoreGState(context);
     
