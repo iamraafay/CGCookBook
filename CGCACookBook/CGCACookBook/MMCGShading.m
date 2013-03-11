@@ -8,6 +8,8 @@
 
 #import "MMCGShading.h"
 
+#define RADIAN(degree)((degree * M_PI) / 180)
+
 @implementation MMCGShading
 
 - (id)initWithFrame:(CGRect)frame
@@ -49,9 +51,9 @@
                      range,
                      &mycallbacks);
     
-    CGPoint startPoint = CGPointMake(0,0.5);
-    CGPoint endPoint = CGPointMake(1,0.5);
-    
+    CGPoint startPoint = CGPointMake(self.center.x - 40., self.center.y);
+    CGPoint endPoint = CGPointMake(self.center.x + 80., self.center.y);
+
     CGShadingRef myShader = CGShadingCreateAxial(deviceRGB,
                          startPoint,
                          endPoint,
@@ -60,10 +62,18 @@
                          false);
     
     CGContextBeginPath(context);
-    CGContextSetFillColorWithColor(context, [[UIColor redColor] CGColor]);
-    CGContextAddArc(context, .5, .5, .3, 0, 180 * 180 / M_PI, 0);
+    
+    CGContextMoveToPoint(context, self.center.x - 40., self.center.y);
+    CGContextAddArc(context, self.center.x, self.center.y, 40., RADIAN(0), RADIAN(180), 1);
+    
+    CGContextSetStrokeColorWithColor(context, [[UIColor redColor] CGColor]);
+    
     CGContextClosePath(context);
+//    CGContextStrokePath(context);
     CGContextClip(context);
+    
+    
+    
     
     CGContextDrawShading(context, myShader);
     CGContextRestoreGState(context);
@@ -72,16 +82,16 @@
 
 void MyShadingFunction(void *info, const CGFloat *in, CGFloat *out) {
     
-    CGFloat v;
-    size_t k, components;
-    static const CGFloat c[] = {1, 0, .5, 0 };
+    CGFloat receivedValues;
+    size_t k, number_of_components;
+    static const CGFloat c[] = {1, 0, 0, 1};
     
-    components = (size_t)info;
+    number_of_components = (size_t)info;
     
-    v = *in;
-    for (k = 0; k < components -1; k++)
-        *out++ = c[k] * v;
-    *out++ = 1;
+    receivedValues = *in;
+    for (k = 0; k < number_of_components -1; k++)
+        *out++ = c[k] * receivedValues;
+    *out++ = .75;
     
 }
 
