@@ -16,6 +16,7 @@
 #import "MMCGShadowView.h"
 #import "MMCGGradients.h"
 #import "MMCGShading.h"
+#import "MMSuperMario.h"
 
 @interface MMDrawingBoardViewController ()
 
@@ -59,6 +60,8 @@
     
     MMCGGradients *cgGradientView = nil;
     MMCGShading *cgShadingView = nil;
+    
+    MMSuperMario *cgSuperMario = nil;
     
     switch (self.comingFromIndexPath.section) {
         case 0:
@@ -110,7 +113,18 @@
             }
             
             break;
+        case 2:
             
+            switch (self.comingFromIndexPath.row) {
+                case 0:
+                    cgSuperMario = [[MMSuperMario alloc] initWithFrame:self.view.frame];
+                    [self.view addSubview:cgSuperMario];
+                    break;
+                default:
+                    break;
+            }
+            
+            break;
         default:
             break;
     }

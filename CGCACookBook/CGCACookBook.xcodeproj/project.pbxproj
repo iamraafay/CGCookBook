@@ -15,6 +15,7 @@
 		6110ED4616E8A29A008BA70C /* MMCGShading.m in Sources */ = {isa = PBXBuildFile; fileRef = 6110ED4516E8A298008BA70C /* MMCGShading.m */; };
 		61764C3B16D4B700000688A1 /* MMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61764C3916D4B700000688A1 /* MMDetailViewController.m */; };
 		61764C3C16D4B700000688A1 /* MMDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61764C3A16D4B700000688A1 /* MMDetailViewController.xib */; };
+		61B2DA7716EDC0810002E223 /* MMSuperMario.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B2DA7616EDC0810002E223 /* MMSuperMario.m */; };
 		61BAF7EE16D6593B00D2D6C8 /* MMPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BAF7ED16D6593B00D2D6C8 /* MMPathView.m */; };
 		61DFDDC016DCD93300182329 /* MMDrawingBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DFDDBE16DCD93300182329 /* MMDrawingBoardViewController.m */; };
 		61DFDDC116DCD93300182329 /* MMDrawingBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61DFDDBF16DCD93300182329 /* MMDrawingBoardViewController.xib */; };
@@ -48,6 +49,8 @@
 		61764C3816D4B700000688A1 /* MMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDetailViewController.h; sourceTree = "<group>"; };
 		61764C3916D4B700000688A1 /* MMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDetailViewController.m; sourceTree = "<group>"; };
 		61764C3A16D4B700000688A1 /* MMDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMDetailViewController.xib; sourceTree = "<group>"; };
+		61B2DA7516EDC0810002E223 /* MMSuperMario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSuperMario.h; sourceTree = "<group>"; };
+		61B2DA7616EDC0810002E223 /* MMSuperMario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSuperMario.m; sourceTree = "<group>"; };
 		61BAF7EC16D6593B00D2D6C8 /* MMPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPathView.h; sourceTree = "<group>"; };
 		61BAF7ED16D6593B00D2D6C8 /* MMPathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPathView.m; sourceTree = "<group>"; };
 		61DFDDBD16DCD93300182329 /* MMDrawingBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawingBoardViewController.h; sourceTree = "<group>"; };
@@ -90,14 +93,24 @@
 		61BAF7EB16D6592400D2D6C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				61DFDDC216DCDF3300182329 /* Paths & Shapes */,
+				61DFDDC216DCDF3300182329 /* CoreGraphics */,
 			);
 			name = Views;
 			sourceTree = "<group>";
 		};
-		61DFDDC216DCDF3300182329 /* Paths & Shapes */ = {
+		61C3849C16EE0C8300BB53FC /* SuperMario */ = {
 			isa = PBXGroup;
 			children = (
+				61B2DA7516EDC0810002E223 /* MMSuperMario.h */,
+				61B2DA7616EDC0810002E223 /* MMSuperMario.m */,
+			);
+			name = SuperMario;
+			sourceTree = "<group>";
+		};
+		61DFDDC216DCDF3300182329 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				61C3849C16EE0C8300BB53FC /* SuperMario */,
 				61BAF7EC16D6593B00D2D6C8 /* MMPathView.h */,
 				61BAF7ED16D6593B00D2D6C8 /* MMPathView.m */,
 				61DFDDC316DCDF6500182329 /* MMPathShapeView.h */,
@@ -115,7 +128,7 @@
 				6110ED4416E8A298008BA70C /* MMCGShading.h */,
 				6110ED4516E8A298008BA70C /* MMCGShading.m */,
 			);
-			name = "Paths & Shapes";
+			name = CoreGraphics;
 			sourceTree = "<group>";
 		};
 		61F43D5316D38CC0008F443C = {
@@ -261,6 +274,7 @@
 				6110ED4016E751C7008BA70C /* MMCGShadowView.m in Sources */,
 				6110ED4316E77129008BA70C /* MMCGGradients.m in Sources */,
 				6110ED4616E8A29A008BA70C /* MMCGShading.m in Sources */,
+				61B2DA7716EDC0810002E223 /* MMSuperMario.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

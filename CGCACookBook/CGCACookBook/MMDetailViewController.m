@@ -61,7 +61,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -74,6 +74,8 @@
             break;
         case 1:
             return 6;
+        case 2:
+            return 1;
         default:
             break;
     }
@@ -137,6 +139,18 @@
                     break;
             }
             
+        case 2:
+            
+            switch (indexPath.row) {
+                case 0:
+                    cell.textLabel.text = @"Super Mario";
+                    cell.detailTextLabel.text = @"####";
+                    break;
+                    
+                default:
+                    break;
+            }
+            
             break;
         default:
             break;
@@ -153,6 +167,9 @@
             break;
         case 1:
             return @"CoreGraphics";
+            break;
+        case 2:
+            return @"Drawings";
             break;
             
         default:
