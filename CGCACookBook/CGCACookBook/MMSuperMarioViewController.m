@@ -29,14 +29,21 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    
+    //TODO: Background, with Cloud?
+    //TODO: Mario Character..
+    
+    
+    
     MMSuperMario *cgSuperMario = nil;
     
     cgSuperMario = [[MMSuperMario alloc] initWithFrame:CGRectMake(self.view.frame.origin.x,
-                                                                   self.view.frame.origin.y - 10.,
+                                                                   self.view.frame.origin.y + 200.,
                                                                    self.view.frame.size.height + 20.,
-                                                                   self.view.frame.size.width)];
+                                                                   self.view.frame.size.width - 250.)];
     cgSuperMario.autoresizesSubviews = YES;
     [self.view addSubview:cgSuperMario];
+    [self.view bringSubviewToFront:cgSuperMario];
     [cgSuperMario setNeedsDisplay];
 }
 

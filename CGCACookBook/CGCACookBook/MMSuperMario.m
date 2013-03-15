@@ -19,7 +19,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-//        self.backgroundColor = [UIColor whiteColor];
+//        self.backgroundColor = [UIColor redColor];
         
     }
     return self;
@@ -146,7 +146,7 @@ void UncoloredPattern(void *info, CGContextRef context) {
     CGPatternCallbacks callbacks = {0, UncoloredPattern, NULL};
     
     CGPatternRef uncoloredPattern = CGPatternCreate(NULL,
-                    CGRectMake(0.0, -190., 50., 50.),
+                    CGRectMake(0.0, 0., 50., 50.),
                     CGAffineTransformIdentity,
                     40., 40.,
                     kCGPatternTilingNoDistortion,
@@ -158,7 +158,10 @@ void UncoloredPattern(void *info, CGContextRef context) {
     
     CGContextSetFillColorWithColor(context, color);
     
-    CGRect tilesFrame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height - 50.);
+    CGRect tilesFrame = CGRectMake(0,
+                                   0,
+                                   self.frame.size.width,
+                                   self.frame.size.height - 0.);
     
     CGContextFillRect(context, tilesFrame);
     
