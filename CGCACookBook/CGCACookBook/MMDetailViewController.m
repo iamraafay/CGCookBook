@@ -139,6 +139,8 @@
                     break;
             }
             
+            break;
+            
         case 2:
             
             switch (indexPath.row) {

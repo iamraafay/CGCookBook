@@ -17,6 +17,8 @@
 		61764C3C16D4B700000688A1 /* MMDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61764C3A16D4B700000688A1 /* MMDetailViewController.xib */; };
 		61B2DA7716EDC0810002E223 /* MMSuperMario.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B2DA7616EDC0810002E223 /* MMSuperMario.m */; };
 		61BAF7EE16D6593B00D2D6C8 /* MMPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BAF7ED16D6593B00D2D6C8 /* MMPathView.m */; };
+		61C3849F16EF214B00BB53FC /* MMNoContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C3849E16EF214A00BB53FC /* MMNoContentView.m */; };
+		61C384A516F1ABF900BB53FC /* MMSuperMarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C384A416F1ABF900BB53FC /* MMSuperMarioViewController.m */; };
 		61DFDDC016DCD93300182329 /* MMDrawingBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DFDDBE16DCD93300182329 /* MMDrawingBoardViewController.m */; };
 		61DFDDC116DCD93300182329 /* MMDrawingBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61DFDDBF16DCD93300182329 /* MMDrawingBoardViewController.xib */; };
 		61DFDDC516DCDF6500182329 /* MMPathShapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DFDDC416DCDF6500182329 /* MMPathShapeView.m */; };
@@ -53,6 +55,10 @@
 		61B2DA7616EDC0810002E223 /* MMSuperMario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSuperMario.m; sourceTree = "<group>"; };
 		61BAF7EC16D6593B00D2D6C8 /* MMPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPathView.h; sourceTree = "<group>"; };
 		61BAF7ED16D6593B00D2D6C8 /* MMPathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPathView.m; sourceTree = "<group>"; };
+		61C3849D16EF214A00BB53FC /* MMNoContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNoContentView.h; sourceTree = "<group>"; };
+		61C3849E16EF214A00BB53FC /* MMNoContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNoContentView.m; sourceTree = "<group>"; };
+		61C384A316F1ABF900BB53FC /* MMSuperMarioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSuperMarioViewController.h; sourceTree = "<group>"; };
+		61C384A416F1ABF900BB53FC /* MMSuperMarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSuperMarioViewController.m; sourceTree = "<group>"; };
 		61DFDDBD16DCD93300182329 /* MMDrawingBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawingBoardViewController.h; sourceTree = "<group>"; };
 		61DFDDBE16DCD93300182329 /* MMDrawingBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawingBoardViewController.m; sourceTree = "<group>"; };
 		61DFDDBF16DCD93300182329 /* MMDrawingBoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMDrawingBoardViewController.xib; sourceTree = "<group>"; };
@@ -103,6 +109,8 @@
 			children = (
 				61B2DA7516EDC0810002E223 /* MMSuperMario.h */,
 				61B2DA7616EDC0810002E223 /* MMSuperMario.m */,
+				61C3849D16EF214A00BB53FC /* MMNoContentView.h */,
+				61C3849E16EF214A00BB53FC /* MMNoContentView.m */,
 			);
 			name = SuperMario;
 			sourceTree = "<group>";
@@ -174,6 +182,8 @@
 				61DFDDBD16DCD93300182329 /* MMDrawingBoardViewController.h */,
 				61DFDDBE16DCD93300182329 /* MMDrawingBoardViewController.m */,
 				61DFDDBF16DCD93300182329 /* MMDrawingBoardViewController.xib */,
+				61C384A316F1ABF900BB53FC /* MMSuperMarioViewController.h */,
+				61C384A416F1ABF900BB53FC /* MMSuperMarioViewController.m */,
 			);
 			path = CGCACookBook;
 			sourceTree = "<group>";
@@ -275,6 +285,8 @@
 				6110ED4316E77129008BA70C /* MMCGGradients.m in Sources */,
 				6110ED4616E8A29A008BA70C /* MMCGShading.m in Sources */,
 				61B2DA7716EDC0810002E223 /* MMSuperMario.m in Sources */,
+				61C3849F16EF214B00BB53FC /* MMNoContentView.m in Sources */,
+				61C384A516F1ABF900BB53FC /* MMSuperMarioViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

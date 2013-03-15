@@ -7,6 +7,7 @@
 //
 
 #import "MMDrawingBoardViewController.h"
+#import "MMSuperMarioViewController.h"
 
 #import "MMPathView.h"
 #import "MMPathShapeView.h"
@@ -16,11 +17,12 @@
 #import "MMCGShadowView.h"
 #import "MMCGGradients.h"
 #import "MMCGShading.h"
-#import "MMSuperMario.h"
+#import "MMNoContentView.h"
 
 @interface MMDrawingBoardViewController ()
 
 @property (nonatomic, strong) NSIndexPath *comingFromIndexPath;
+@property (nonatomic, strong) MMNoContentView *noContent;
 
 @end
 
@@ -49,6 +51,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    if (UIDeviceOrientationIsPortrait([self interfaceOrientation])) {
+        if (_noContent == nil) {
+            _noContent = [[MMNoContentView alloc] initWithFrame:self.view.frame];
+        }
+        
+        [self.view addSubview:_noContent];
+        [_noContent setHidden:YES];
+    }
+    
+    
     MMPathView *pathView = nil;
     MMPathShapeView *pathShapeView = nil;
     
@@ -61,7 +73,7 @@
     MMCGGradients *cgGradientView = nil;
     MMCGShading *cgShadingView = nil;
     
-    MMSuperMario *cgSuperMario = nil;
+    MMSuperMarioViewController *superMario = nil;
     
     switch (self.comingFromIndexPath.section) {
         case 0:
@@ -117,8 +129,16 @@
             
             switch (self.comingFromIndexPath.row) {
                 case 0:
-                    cgSuperMario = [[MMSuperMario alloc] initWithFrame:self.view.frame];
-                    [self.view addSubview:cgSuperMario];
+                    
+                    superMario = [[MMSuperMarioViewController alloc] initWithNibName:nil bundle:nil];
+                    superMario.view.frame = CGRectMake(self.view.frame.origin.x,
+                                                       self.view.frame.origin.y - 20.,
+                                                       self.view.frame.size.width,
+                                                       self.view.frame.size.height);
+                    [self.view addSubview:superMario.view];
+                    [self addChildViewController:superMario];
+                    [_noContent setHidden:NO];
+                    
                     break;
                 default:
                     break;
@@ -129,8 +149,8 @@
             break;
     }
     
-    
     [pathView setNeedsDisplay];
+    [self.view bringSubviewToFront:_noContent];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -143,6 +163,74 @@
     
     if ([self.delegate respondsToSelector:@selector(mmDrawingBoardViewController:didPopedOut:)]) {
         [self.delegate mmDrawingBoardViewController:self didPopedOut:YES];
+    }
+    
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+        
+    if (toInterfaceOrientation == UIDeviceOrientationLandscapeLeft ||
+        toInterfaceOrientation == UIDeviceOrientationLandscapeRight) {
+        
+        switch (self.comingFromIndexPath.section) {
+            case 0:
+                
+                break;
+                
+            case 1:
+                
+                break;
+            case 2:
+                
+                switch (self.comingFromIndexPath.row) {
+                    case 0:
+                        [_noContent setHidden:YES];
+                        
+                        break;
+                    default:
+                        break;
+                }
+                
+                break;
+            default:
+                break;
+        }
+        
+    } else if (toInterfaceOrientation == UIDeviceOrientationPortrait) {
+        
+        switch (self.comingFromIndexPath.section) {
+            case 0:
+                
+                break;
+                
+            case 1:
+                
+                break;
+            case 2:
+                
+                switch (self.comingFromIndexPath.row) {
+                    case 0:
+                        [_noContent setHidden:NO];
+                        break;
+                    default:
+                        break;
+                }
+                
+                break;
+            default:
+                break;
+        }
+        
+        
+    }
+
+    
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    
+    if (UIDeviceOrientationIsLandscape([self interfaceOrientation])) {
+        
     }
     
 }

@@ -20,6 +20,7 @@
     if (self) {
         // Initialization code
 //        self.backgroundColor = [UIColor whiteColor];
+        
     }
     return self;
 }
@@ -33,30 +34,31 @@ void UncoloredPattern(void *info, CGContextRef context) {
     /*Basic stencil setup*/
     
     CGContextBeginPath(context);
-    //    CGContextSetStrokeColorWithColor(context, [[UIColor redColor] CGColor]);
+    
+//    CGContextSetStrokeColorWithColor(context, [[UIColor redColor] CGColor]);
     CGContextSetFillColorWithColor(context, [[UIColor colorWithRed:185./255. green:55./255. blue:13./255 alpha:1.0] CGColor]);
     CGMutablePathRef brickPath = CGPathCreateMutable();
-    CGPathMoveToPoint(brickPath, NULL, ZOOM(10.), ZOOM(10.));
+    CGPathMoveToPoint(brickPath, NULL, ZOOM(10. - 10.), ZOOM(10. - 10.));
     
-    CGPathAddLineToPoint(brickPath, NULL, ZOOM(50.), ZOOM(10.));
-    CGPathMoveToPoint(brickPath, NULL, ZOOM(40.), ZOOM(10.));
-    CGPathAddLineToPoint(brickPath, NULL, ZOOM(40.), ZOOM(25.));
+    CGPathAddLineToPoint(brickPath, NULL, ZOOM(50. - 10.), ZOOM(10. - 10.));
+    CGPathMoveToPoint(brickPath, NULL, ZOOM(40. - 10.), ZOOM(10. - 10.));
+    CGPathAddLineToPoint(brickPath, NULL, ZOOM(40. - 10.), ZOOM(25. - 10.));
     CGPathAddCurveToPoint(brickPath, NULL,
-                          ZOOM(40.), ZOOM(50.),   //ctrl 1
-                          ZOOM(10.), ZOOM(35.),   //ctrl 2
-                          ZOOM(10.), ZOOM(25.));  //end point
-    CGPathAddLineToPoint(brickPath, NULL, ZOOM(10.), ZOOM(10.));
+                          ZOOM(40. - 10.), ZOOM(50. - 10.),   //ctrl 1
+                          ZOOM(10. - 10.), ZOOM(35. - 10.),   //ctrl 2
+                          ZOOM(10. - 10.), ZOOM(25. - 10.));  //end point
+    CGPathAddLineToPoint(brickPath, NULL, ZOOM(10. - 10.), ZOOM(10. - 10.));
     
-    CGPathMoveToPoint(brickPath, NULL, ZOOM(50.), ZOOM(10.));
-    CGPathAddLineToPoint(brickPath, NULL, ZOOM(50.), ZOOM(50.));
-    CGPathAddLineToPoint(brickPath, NULL, ZOOM(10.), ZOOM(50.));
-    CGPathAddLineToPoint(brickPath, NULL, ZOOM(10.), ZOOM(15.));
+    CGPathMoveToPoint(brickPath, NULL, ZOOM(50. - 10.), ZOOM(10. - 10.));
+    CGPathAddLineToPoint(brickPath, NULL, ZOOM(50. - 10.), ZOOM(50. - 10.));
+    CGPathAddLineToPoint(brickPath, NULL, ZOOM(10. - 10.), ZOOM(50. - 10.));
+    CGPathAddLineToPoint(brickPath, NULL, ZOOM(10. - 10.), ZOOM(15. - 10.));
     
-    CGPathMoveToPoint(brickPath, NULL, ZOOM(35.), ZOOM(37.));
-    CGPathAddLineToPoint(brickPath, NULL, ZOOM(35.), ZOOM(50.));
+    CGPathMoveToPoint(brickPath, NULL, ZOOM(35. - 10.), ZOOM(37. - 10.));
+    CGPathAddLineToPoint(brickPath, NULL, ZOOM(35. - 10.), ZOOM(50. - 10.));
     
-    CGPathMoveToPoint(brickPath, NULL, ZOOM(40.), ZOOM(20.));
-    CGPathAddLineToPoint(brickPath, NULL, ZOOM(50.), ZOOM(20.));
+    CGPathMoveToPoint(brickPath, NULL, ZOOM(40. - 10.), ZOOM(20. - 10.));
+    CGPathAddLineToPoint(brickPath, NULL, ZOOM(50. - 10.), ZOOM(20. - 10.));
     
     CGContextAddPath(context, brickPath);
     CGContextDrawPath(context, kCGPathFillStroke);
@@ -72,24 +74,24 @@ void UncoloredPattern(void *info, CGContextRef context) {
     
     CGMutablePathRef whitePath = CGPathCreateMutable();
     CGContextAddPath(context, whitePath);
-    CGPathMoveToPoint(whitePath, NULL, ZOOM(11.), ZOOM(10.));
-    CGPathAddLineToPoint(whitePath, NULL, ZOOM(39.), ZOOM(10.));
-    CGPathMoveToPoint(whitePath, NULL, ZOOM(41.), ZOOM(10.));
-    CGPathAddLineToPoint(whitePath, NULL, ZOOM(49.), ZOOM(10.));
-    CGPathMoveToPoint(whitePath, NULL, ZOOM(10.), ZOOM(11.));
-    CGPathAddLineToPoint(whitePath, NULL, ZOOM(10.), ZOOM(49.));
+    CGPathMoveToPoint(whitePath, NULL, ZOOM(11. - 10.), ZOOM(10. - 10.));
+    CGPathAddLineToPoint(whitePath, NULL, ZOOM(39. - 10.), ZOOM(10. - 10.));
+    CGPathMoveToPoint(whitePath, NULL, ZOOM(41. - 10.), ZOOM(10. - 10.));
+    CGPathAddLineToPoint(whitePath, NULL, ZOOM(49. - 10.), ZOOM(10. - 10.));
+    CGPathMoveToPoint(whitePath, NULL, ZOOM(10. - 10.), ZOOM(11. - 10.));
+    CGPathAddLineToPoint(whitePath, NULL, ZOOM(10. - 10.), ZOOM(49. - 10.));
     
-    CGPathMoveToPoint(whitePath, NULL, ZOOM(40.), ZOOM(10.));
-    CGPathAddLineToPoint(whitePath, NULL, ZOOM(40.), ZOOM(25.));
+    CGPathMoveToPoint(whitePath, NULL, ZOOM(40. - 10.), ZOOM(10. - 10.));
+    CGPathAddLineToPoint(whitePath, NULL, ZOOM(40. - 10.), ZOOM(25. - 10.));
     CGPathAddCurveToPoint(whitePath, NULL,
-                          ZOOM(40.), ZOOM(50.),   //ctrl 1
-                          ZOOM(10.), ZOOM(35.),   //ctrl 2
-                          ZOOM(10.), ZOOM(25.));
-    CGPathMoveToPoint(whitePath, NULL, ZOOM(35.), ZOOM(37.));
-    CGPathAddLineToPoint(whitePath, NULL, ZOOM(35.), ZOOM(50.));
+                          ZOOM(40. - 10.), ZOOM(50. - 10.),   //ctrl 1
+                          ZOOM(10. - 10.), ZOOM(35. - 10.),   //ctrl 2
+                          ZOOM(10. - 10.), ZOOM(25. - 10.));
+    CGPathMoveToPoint(whitePath, NULL, ZOOM(35. - 10.), ZOOM(37. - 10.));
+    CGPathAddLineToPoint(whitePath, NULL, ZOOM(35. - 10.), ZOOM(50. - 10.));
     
-    CGPathMoveToPoint(whitePath, NULL, ZOOM(40.), ZOOM(20.));
-    CGPathAddLineToPoint(whitePath, NULL, ZOOM(49.), ZOOM(20.));
+    CGPathMoveToPoint(whitePath, NULL, ZOOM(40. - 10.), ZOOM(20. - 10.));
+    CGPathAddLineToPoint(whitePath, NULL, ZOOM(49. - 10.), ZOOM(20. - 10.));
     
     
     CGContextAddPath(context, whitePath);
@@ -101,24 +103,24 @@ void UncoloredPattern(void *info, CGContextRef context) {
     CGContextSetStrokeColorWithColor(context, [[UIColor blackColor] CGColor]);
     
     CGMutablePathRef blackPath = CGPathCreateMutable();
-    CGPathMoveToPoint(blackPath, NULL, ZOOM(50.), ZOOM(10.));
-    CGPathAddLineToPoint(blackPath, NULL, ZOOM(50.), ZOOM(50.));
-    CGPathAddLineToPoint(blackPath, NULL, ZOOM(35.5), ZOOM(50.));
-    CGPathMoveToPoint(blackPath, NULL, ZOOM(34.5), ZOOM(50.));
-    CGPathAddLineToPoint(blackPath, NULL, ZOOM(11.), ZOOM(50.));
-    CGPathMoveToPoint(blackPath, NULL, ZOOM(50.), ZOOM(19.5));
-    CGPathAddLineToPoint(blackPath, NULL, ZOOM(40.9), ZOOM(19.5));
-    CGPathAddLineToPoint(blackPath, NULL, ZOOM(40.9), ZOOM(17.5));
+    CGPathMoveToPoint(blackPath, NULL, ZOOM(50. - 10.), ZOOM(10. - 10.));
+    CGPathAddLineToPoint(blackPath, NULL, ZOOM(50. - 10.), ZOOM(50. - 10.));
+    CGPathAddLineToPoint(blackPath, NULL, ZOOM(35.5 - 10.), ZOOM(50. - 10.));
+    CGPathMoveToPoint(blackPath, NULL, ZOOM(34.5 - 10.), ZOOM(50. - 10.));
+    CGPathAddLineToPoint(blackPath, NULL, ZOOM(11. - 10.), ZOOM(50. - 10.));
+    CGPathMoveToPoint(blackPath, NULL, ZOOM(50. - 10.), ZOOM(19.5 - 10.));
+    CGPathAddLineToPoint(blackPath, NULL, ZOOM(40.9 - 10.), ZOOM(19.5 - 10.));
+    CGPathAddLineToPoint(blackPath, NULL, ZOOM(40.9 - 10.), ZOOM(17.5 - 10.));
     
-    CGPathMoveToPoint(blackPath, NULL, ZOOM(39.5), ZOOM(9.));
-    CGPathAddLineToPoint(blackPath, NULL, ZOOM(39.5), ZOOM(25.));
+    CGPathMoveToPoint(blackPath, NULL, ZOOM(39.5 - 10.), ZOOM(9. - 10.));
+    CGPathAddLineToPoint(blackPath, NULL, ZOOM(39.5 - 10.), ZOOM(25. - 10.));
     CGPathAddCurveToPoint(blackPath, NULL,
-                          ZOOM(40.), ZOOM(49.),   //ctrl 1
-                          ZOOM(10.), ZOOM(34.),   //ctrl 2
-                          ZOOM(10.), ZOOM(24.));
+                          ZOOM(40. - 10.), ZOOM(49. - 10.),   //ctrl 1
+                          ZOOM(10. - 10.), ZOOM(34. - 10.),   //ctrl 2
+                          ZOOM(10. - 10.), ZOOM(24. - 10.));
     
-    CGPathMoveToPoint(blackPath, NULL, ZOOM(34.), ZOOM(37.));
-    CGPathAddLineToPoint(blackPath, NULL, ZOOM(34.), ZOOM(49.));
+    CGPathMoveToPoint(blackPath, NULL, ZOOM(34. - 10.), ZOOM(37. - 10.));
+    CGPathAddLineToPoint(blackPath, NULL, ZOOM(34. - 10.), ZOOM(49. - 10.));
     
     CGContextAddPath(context, blackPath);
     CGContextStrokePath(context);
@@ -133,12 +135,18 @@ void UncoloredPattern(void *info, CGContextRef context) {
 {
     // Drawing code
     
+    [super drawRect:self.frame];
+    
+    rect = self.frame;
+    
+    NSLog(@"Rect:%@", NSStringFromCGRect(rect));
+    
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGPatternCallbacks callbacks = {0, UncoloredPattern, NULL};
     
     CGPatternRef uncoloredPattern = CGPatternCreate(NULL,
-                    CGRectMake(0.0, 0., 50., 50.),
+                    CGRectMake(0.0, -190., 50., 50.),
                     CGAffineTransformIdentity,
                     40., 40.,
                     kCGPatternTilingNoDistortion,
@@ -148,21 +156,11 @@ void UncoloredPattern(void *info, CGContextRef context) {
     
     CGColorRef color = CGColorCreateWithPattern(CGColorSpaceCreatePattern(NULL), uncoloredPattern, &alpha);
     
-//    CGColorSpaceRef uncoloredPatternColorSpace = CGColorSpaceCreatePattern(CGColorSpaceCreateDeviceRGB());
-    
-//    CGContextSetFillColorSpace(context, uncoloredPatternColorSpace);
-    
-    
-    
-//    CGContextSetFillPattern(context, uncoloredPattern, color);
-    
-//    CGContextFillRect(context, self.frame);
-    
-    
     CGContextSetFillColorWithColor(context, color);
     
-    CGContextFillRect(context, self.frame);
+    CGRect tilesFrame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height - 50.);
     
+    CGContextFillRect(context, tilesFrame);
     
 }
 
