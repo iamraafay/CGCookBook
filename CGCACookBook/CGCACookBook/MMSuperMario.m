@@ -135,12 +135,6 @@ void UncoloredPattern(void *info, CGContextRef context) {
 {
     // Drawing code
     
-    [super drawRect:self.frame];
-    
-    rect = self.frame;
-    
-    NSLog(@"Rect:%@", NSStringFromCGRect(rect));
-    
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGPatternCallbacks callbacks = {0, UncoloredPattern, NULL};
@@ -161,7 +155,7 @@ void UncoloredPattern(void *info, CGContextRef context) {
     CGRect tilesFrame = CGRectMake(0,
                                    0,
                                    self.frame.size.width,
-                                   self.frame.size.height - 0.);
+                                   self.frame.size.height);
     
     CGContextFillRect(context, tilesFrame);
     

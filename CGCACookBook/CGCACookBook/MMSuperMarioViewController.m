@@ -7,7 +7,9 @@
 //
 
 #import "MMSuperMarioViewController.h"
+
 #import "MMSuperMario.h"
+#import "MMSceneBackground.h"
 
 @interface MMSuperMarioViewController ()
 
@@ -34,6 +36,13 @@
     //TODO: Mario Character..
     
     
+    MMSceneBackground *cgSceneBackground = [[MMSceneBackground alloc] initWithFrame:CGRectMake(self.view.frame.origin.x,
+                                                                                               self.view.frame.origin.y,
+                                                                                               self.view.frame.size.height + 20.,
+                                                                                               self.view.frame.size.width - 120.)];
+    cgSceneBackground.autoresizesSubviews = YES;
+    
+    
     
     MMSuperMario *cgSuperMario = nil;
     
@@ -43,6 +52,8 @@
                                                                    self.view.frame.size.width - 250.)];
     cgSuperMario.autoresizesSubviews = YES;
     [self.view addSubview:cgSuperMario];
+    [self.view addSubview:cgSceneBackground];
+    
     [self.view bringSubviewToFront:cgSuperMario];
     [cgSuperMario setNeedsDisplay];
 }

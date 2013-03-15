@@ -13,6 +13,7 @@
 		6110ED4016E751C7008BA70C /* MMCGShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6110ED3F16E751C6008BA70C /* MMCGShadowView.m */; };
 		6110ED4316E77129008BA70C /* MMCGGradients.m in Sources */ = {isa = PBXBuildFile; fileRef = 6110ED4216E77128008BA70C /* MMCGGradients.m */; };
 		6110ED4616E8A29A008BA70C /* MMCGShading.m in Sources */ = {isa = PBXBuildFile; fileRef = 6110ED4516E8A298008BA70C /* MMCGShading.m */; };
+		612F129A16F35EB700931EB7 /* MMSceneBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 612F129916F35EB700931EB7 /* MMSceneBackground.m */; };
 		61764C3B16D4B700000688A1 /* MMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61764C3916D4B700000688A1 /* MMDetailViewController.m */; };
 		61764C3C16D4B700000688A1 /* MMDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61764C3A16D4B700000688A1 /* MMDetailViewController.xib */; };
 		61B2DA7716EDC0810002E223 /* MMSuperMario.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B2DA7616EDC0810002E223 /* MMSuperMario.m */; };
@@ -48,6 +49,8 @@
 		6110ED4216E77128008BA70C /* MMCGGradients.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCGGradients.m; sourceTree = "<group>"; };
 		6110ED4416E8A298008BA70C /* MMCGShading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCGShading.h; sourceTree = "<group>"; };
 		6110ED4516E8A298008BA70C /* MMCGShading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCGShading.m; sourceTree = "<group>"; };
+		612F129816F35EB700931EB7 /* MMSceneBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSceneBackground.h; sourceTree = "<group>"; };
+		612F129916F35EB700931EB7 /* MMSceneBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSceneBackground.m; sourceTree = "<group>"; };
 		61764C3816D4B700000688A1 /* MMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDetailViewController.h; sourceTree = "<group>"; };
 		61764C3916D4B700000688A1 /* MMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDetailViewController.m; sourceTree = "<group>"; };
 		61764C3A16D4B700000688A1 /* MMDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMDetailViewController.xib; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 				61B2DA7616EDC0810002E223 /* MMSuperMario.m */,
 				61C3849D16EF214A00BB53FC /* MMNoContentView.h */,
 				61C3849E16EF214A00BB53FC /* MMNoContentView.m */,
+				612F129816F35EB700931EB7 /* MMSceneBackground.h */,
+				612F129916F35EB700931EB7 /* MMSceneBackground.m */,
 			);
 			name = SuperMario;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 				61B2DA7716EDC0810002E223 /* MMSuperMario.m in Sources */,
 				61C3849F16EF214B00BB53FC /* MMNoContentView.m in Sources */,
 				61C384A516F1ABF900BB53FC /* MMSuperMarioViewController.m in Sources */,
+				612F129A16F35EB700931EB7 /* MMSceneBackground.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
