@@ -10,6 +10,7 @@
 
 #import "MMSuperMario.h"
 #import "MMSceneBackground.h"
+#import "MMChimney.h"
 
 @interface MMSuperMarioViewController ()
 
@@ -32,7 +33,6 @@
 	// Do any additional setup after loading the view.
     
     
-    //TODO: Background, with Cloud?
     //TODO: Mario Character..
     
     
@@ -51,8 +51,18 @@
                                                                    self.view.frame.size.height + 20.,
                                                                    self.view.frame.size.width - 250.)];
     cgSuperMario.autoresizesSubviews = YES;
+    
+    
+    
+    MMChimney *spChimney = [[MMChimney alloc] initWithFrame:CGRectMake(0., 0.,
+                                                                       self.view.frame.size.height + 20,
+                                                                       self.view.frame.size.width)];
+    spChimney.autoresizesSubviews = YES;
+    
+    
     [self.view addSubview:cgSuperMario];
     [self.view addSubview:cgSceneBackground];
+    [self.view addSubview:spChimney];
     
     [self.view bringSubviewToFront:cgSuperMario];
     [cgSuperMario setNeedsDisplay];

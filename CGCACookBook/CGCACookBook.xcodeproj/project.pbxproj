@@ -23,6 +23,7 @@
 		61DFDDC016DCD93300182329 /* MMDrawingBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DFDDBE16DCD93300182329 /* MMDrawingBoardViewController.m */; };
 		61DFDDC116DCD93300182329 /* MMDrawingBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61DFDDBF16DCD93300182329 /* MMDrawingBoardViewController.xib */; };
 		61DFDDC516DCDF6500182329 /* MMPathShapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DFDDC416DCDF6500182329 /* MMPathShapeView.m */; };
+		61E1EFAF16F6FE320093DEDF /* MMChimney.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E1EFAE16F6FE320093DEDF /* MMChimney.m */; };
 		61F43D6016D38CC0008F443C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61F43D5F16D38CC0008F443C /* UIKit.framework */; };
 		61F43D6216D38CC0008F443C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61F43D6116D38CC0008F443C /* Foundation.framework */; };
 		61F43D6416D38CC0008F443C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61F43D6316D38CC0008F443C /* CoreGraphics.framework */; };
@@ -67,6 +68,8 @@
 		61DFDDBF16DCD93300182329 /* MMDrawingBoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMDrawingBoardViewController.xib; sourceTree = "<group>"; };
 		61DFDDC316DCDF6500182329 /* MMPathShapeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPathShapeView.h; sourceTree = "<group>"; };
 		61DFDDC416DCDF6500182329 /* MMPathShapeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPathShapeView.m; sourceTree = "<group>"; };
+		61E1EFAD16F6FE320093DEDF /* MMChimney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMChimney.h; sourceTree = "<group>"; };
+		61E1EFAE16F6FE320093DEDF /* MMChimney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMChimney.m; sourceTree = "<group>"; };
 		61F43D5C16D38CC0008F443C /* CGCACookBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CGCACookBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61F43D5F16D38CC0008F443C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		61F43D6116D38CC0008F443C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -116,6 +119,8 @@
 				61C3849E16EF214A00BB53FC /* MMNoContentView.m */,
 				612F129816F35EB700931EB7 /* MMSceneBackground.h */,
 				612F129916F35EB700931EB7 /* MMSceneBackground.m */,
+				61E1EFAD16F6FE320093DEDF /* MMChimney.h */,
+				61E1EFAE16F6FE320093DEDF /* MMChimney.m */,
 			);
 			name = SuperMario;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				61C3849F16EF214B00BB53FC /* MMNoContentView.m in Sources */,
 				61C384A516F1ABF900BB53FC /* MMSuperMarioViewController.m in Sources */,
 				612F129A16F35EB700931EB7 /* MMSceneBackground.m in Sources */,
+				61E1EFAF16F6FE320093DEDF /* MMChimney.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
