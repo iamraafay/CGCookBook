@@ -11,6 +11,7 @@
 #import "MMSuperMario.h"
 #import "MMSceneBackground.h"
 #import "MMChimney.h"
+#import "MMMrMario.h"
 
 @interface MMSuperMarioViewController ()
 
@@ -43,16 +44,11 @@
     cgSceneBackground.autoresizesSubviews = YES;
     
     
-    
-    MMSuperMario *cgSuperMario = nil;
-    
-    cgSuperMario = [[MMSuperMario alloc] initWithFrame:CGRectMake(self.view.frame.origin.x,
+    MMSuperMario *cgSuperMario = [[MMSuperMario alloc] initWithFrame:CGRectMake(self.view.frame.origin.x,
                                                                    self.view.frame.origin.y + 200.,
                                                                    self.view.frame.size.height + 20.,
                                                                    self.view.frame.size.width - 250.)];
     cgSuperMario.autoresizesSubviews = YES;
-    
-    
     
     MMChimney *spChimney = [[MMChimney alloc] initWithFrame:CGRectMake(0., 0.,
                                                                        self.view.frame.size.height + 20,
@@ -60,9 +56,17 @@
     spChimney.autoresizesSubviews = YES;
     
     
+    MMMrMario *mmMario = [[MMMrMario alloc] initWithFrame:CGRectMake(0., 0.,
+                                                                     self.view.frame.size.height + 20,
+                                                                     self.view.frame.size.width)];
+    mmMario.autoresizesSubviews = YES;
+    
+    
     [self.view addSubview:cgSuperMario];
     [self.view addSubview:cgSceneBackground];
     [self.view addSubview:spChimney];
+    [self.view addSubview:mmMario];
+    
     
     [self.view bringSubviewToFront:cgSuperMario];
     [cgSuperMario setNeedsDisplay];

@@ -10,6 +10,8 @@
 
 #define ZOOM(val)(val * level)
 
+#define RADIAN(degree)((degree * M_PI)/180.)
+
 #import "MMChimney.h"
 
 @implementation MMChimney
@@ -140,6 +142,28 @@ void ChimneyLightShader(void *info, const CGFloat *in, CGFloat *out)
     CGContextDrawShading(context, chimneyHeadShading);
     
     CGContextRestoreGState(context);
+    
+    
+    
+    CGContextSaveGState(context);
+    
+    CGContextBeginPath(context);
+    
+    CGContextSetStrokeColorWithColor(context, [[UIColor blackColor] CGColor]);
+    CGContextSetFillColorWithColor(context, [[UIColor colorWithRed:40/255. green:156/255. blue:2/255. alpha:.75] CGColor]);
+    
+    CGContextMoveToPoint(context, ZOOM(100.), ZOOM(237.));
+    CGContextAddLineToPoint(context, ZOOM(170.), ZOOM(180.));
+    CGContextAddArc(context, ZOOM(200.), ZOOM(180.), ZOOM(20.), ZOOM(RADIAN(220)), ZOOM(RADIAN(320)), 0);
+    CGContextAddLineToPoint(context, ZOOM(300.), ZOOM(237.));
+    CGContextClosePath(context);
+    
+    CGContextDrawPath(context, kCGPathFillStroke);
+    
+    CGContextRestoreGState(context);
+     
+    
+    
     
 }
 
