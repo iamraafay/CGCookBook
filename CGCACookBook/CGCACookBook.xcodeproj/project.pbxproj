@@ -16,6 +16,7 @@
 		612F129A16F35EB700931EB7 /* MMSceneBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 612F129916F35EB700931EB7 /* MMSceneBackground.m */; };
 		61764C3B16D4B700000688A1 /* MMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61764C3916D4B700000688A1 /* MMDetailViewController.m */; };
 		61764C3C16D4B700000688A1 /* MMDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61764C3A16D4B700000688A1 /* MMDetailViewController.xib */; };
+		61AB21BC16FC8B2F005D4A09 /* MMCGLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61AB21BB16FC8B2F005D4A09 /* MMCGLayerView.m */; };
 		61B2DA7716EDC0810002E223 /* MMSuperMario.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B2DA7616EDC0810002E223 /* MMSuperMario.m */; };
 		61BAF7EE16D6593B00D2D6C8 /* MMPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BAF7ED16D6593B00D2D6C8 /* MMPathView.m */; };
 		61C3849F16EF214B00BB53FC /* MMNoContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C3849E16EF214A00BB53FC /* MMNoContentView.m */; };
@@ -56,6 +57,8 @@
 		61764C3816D4B700000688A1 /* MMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDetailViewController.h; sourceTree = "<group>"; };
 		61764C3916D4B700000688A1 /* MMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDetailViewController.m; sourceTree = "<group>"; };
 		61764C3A16D4B700000688A1 /* MMDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMDetailViewController.xib; sourceTree = "<group>"; };
+		61AB21BA16FC8B2E005D4A09 /* MMCGLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCGLayerView.h; sourceTree = "<group>"; };
+		61AB21BB16FC8B2F005D4A09 /* MMCGLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCGLayerView.m; sourceTree = "<group>"; };
 		61B2DA7516EDC0810002E223 /* MMSuperMario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSuperMario.h; sourceTree = "<group>"; };
 		61B2DA7616EDC0810002E223 /* MMSuperMario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSuperMario.m; sourceTree = "<group>"; };
 		61BAF7EC16D6593B00D2D6C8 /* MMPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPathView.h; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 				6110ED4216E77128008BA70C /* MMCGGradients.m */,
 				6110ED4416E8A298008BA70C /* MMCGShading.h */,
 				6110ED4516E8A298008BA70C /* MMCGShading.m */,
+				61AB21BA16FC8B2E005D4A09 /* MMCGLayerView.h */,
+				61AB21BB16FC8B2F005D4A09 /* MMCGLayerView.m */,
 			);
 			name = CoreGraphics;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 				612F129A16F35EB700931EB7 /* MMSceneBackground.m in Sources */,
 				61E1EFAF16F6FE320093DEDF /* MMChimney.m in Sources */,
 				61E1EFB216F842230093DEDF /* MMMrMario.m in Sources */,
+				61AB21BC16FC8B2F005D4A09 /* MMCGLayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

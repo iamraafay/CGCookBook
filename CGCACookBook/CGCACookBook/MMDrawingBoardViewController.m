@@ -18,6 +18,7 @@
 #import "MMCGGradients.h"
 #import "MMCGShading.h"
 #import "MMNoContentView.h"
+#import "MMCGLayerView.h"
 
 @interface MMDrawingBoardViewController ()
 
@@ -73,6 +74,8 @@
     MMCGGradients *cgGradientView = nil;
     MMCGShading *cgShadingView = nil;
     
+    MMCGLayerView *cgLayerView = nil;
+    
     MMSuperMarioViewController *superMario = nil;
     
     switch (self.comingFromIndexPath.section) {
@@ -119,6 +122,10 @@
                 case 5:
                     cgShadingView = [[MMCGShading alloc] initWithFrame:self.view.frame];
                     [self.view addSubview:cgShadingView];
+                    break;
+                case 6:
+                    cgLayerView = [[MMCGLayerView alloc] initWithFrame:self.view.frame];
+                    [self.view addSubview:cgLayerView];
                     break;
                 default:
                     break;

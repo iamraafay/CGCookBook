@@ -73,7 +73,7 @@
             return 2;
             break;
         case 1:
-            return 6;
+            return 7;
         case 2:
             return 1;
         default:
@@ -129,12 +129,15 @@
                     break;
                 case 4:
                     cell.textLabel.text = @"Gradients";
-                    cell.detailTextLabel.text = @"#####";
+                    cell.detailTextLabel.text = @"CGGrradient";
                     break;
                 case 5:
                     cell.textLabel.text = @"Shading";
-                    cell.detailTextLabel.text = @"#####";
+                    cell.detailTextLabel.text = @"CGShading";
                     break;
+                case 6:
+                    cell.textLabel.text = @"Layer";
+                    cell.detailTextLabel.text = @"CGLayer";
                 default:
                     break;
             }
@@ -142,17 +145,12 @@
             break;
             
         case 2:
-            
             switch (indexPath.row) {
                 case 0:
                     cell.textLabel.text = @"Super Mario";
-                    cell.detailTextLabel.text = @"####";
-                    break;
-                    
-                default:
+                    cell.detailTextLabel.text = @"A Sequence of Super Mario";
                     break;
             }
-            
             break;
         default:
             break;
