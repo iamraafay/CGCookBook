@@ -293,7 +293,87 @@ void FaceShading(void *info, const CGFloat *in, CGFloat *out)
     CGContextStrokePath(context);
     
     
-    CGContextDrawLayerAtPoint(actualContext, (CGPoint) {/*0., 100.*/}, faceLayer);
+    CGContextDrawLayerAtPoint(actualContext, (CGPoint) {
+                                                        0, -25.
+                                                        /*0., 100.*/
+                                                        }, faceLayer);
+    
+    
+    CGContextSaveGState(actualContext);
+    
+    CGSize bodyCostumeLayerSize = CGSizeMake(ZOOM(80.), ZOOM(70.));
+    CGLayerRef bodyCostumeLayer = CGLayerCreateWithContext(actualContext, bodyCostumeLayerSize, NULL);
+    CGContextRef bodyCostumeLayerContext = CGLayerGetContext(bodyCostumeLayer);
+    
+    CGContextSetStrokeColorWithColor(bodyCostumeLayerContext, [[UIColor redColor] CGColor]);
+    CGContextStrokeRect(bodyCostumeLayerContext, (CGRect) {CGPointZero, bodyCostumeLayerSize} );
+    
+    
+    //MARK: the shoulder with the tummy, the red stuff
+    CGContextBeginPath(bodyCostumeLayerContext);
+    
+    CGContextMoveToPoint(bodyCostumeLayerContext, ZOOM(0.), ZOOM(40.));
+    CGContextAddCurveToPoint(bodyCostumeLayerContext,
+                             ZOOM(0.), ZOOM(-10.), ZOOM(80.), ZOOM(-30.),
+                             ZOOM(80.), ZOOM(40.));
+    
+    CGContextAddCurveToPoint(bodyCostumeLayerContext,
+                             ZOOM(72.), ZOOM(34.), ZOOM(72.), ZOOM(48.),
+                             ZOOM(65), ZOOM(48.));
+    
+    CGContextMoveToPoint(bodyCostumeLayerContext, ZOOM(68.), ZOOM(46.));
+    CGContextAddLineToPoint(bodyCostumeLayerContext, ZOOM(62.), ZOOM(25.));
+    
+    CGContextAddLineToPoint(bodyCostumeLayerContext, ZOOM(62.), ZOOM(26.5));
+    CGContextAddLineToPoint(bodyCostumeLayerContext, ZOOM(26.), ZOOM(26.5));
+    CGContextAddLineToPoint(bodyCostumeLayerContext, ZOOM(26.), ZOOM(25.));
+    
+    CGContextAddCurveToPoint(bodyCostumeLayerContext,
+                             ZOOM(18.), ZOOM(30.), ZOOM(16.), ZOOM(40.),
+                             ZOOM(16.), ZOOM(40.));
+    CGContextAddCurveToPoint(bodyCostumeLayerContext,
+                             ZOOM(16.), ZOOM(46.), ZOOM(0.), ZOOM(46.),
+                             ZOOM(0.), ZOOM(40.));
+    
+    CGContextStrokePath(bodyCostumeLayerContext);
+    
+    
+    //MARK: the hands, white stuff
+    
+    //Right Hand
+    CGContextBeginPath(bodyCostumeLayerContext);
+    
+    CGContextMoveToPoint(bodyCostumeLayerContext, ZOOM(80.), ZOOM(40.));
+    CGContextAddLineToPoint(bodyCostumeLayerContext, ZOOM(80.), ZOOM(50.));
+    CGContextAddLineToPoint(bodyCostumeLayerContext, ZOOM(70.), ZOOM(60.));
+    CGContextAddLineToPoint(bodyCostumeLayerContext, ZOOM(70.), ZOOM(50.));
+    CGContextAddLineToPoint(bodyCostumeLayerContext, ZOOM(65.), ZOOM(50.));
+    CGContextAddLineToPoint(bodyCostumeLayerContext, ZOOM(65.), ZOOM(48.));
+    
+    CGContextAddCurveToPoint(bodyCostumeLayerContext,
+                             ZOOM(72.), ZOOM(48.), ZOOM(72.), ZOOM(34.),
+                             ZOOM(80), ZOOM(40.));
+    
+    //Left hand
+    CGContextMoveToPoint(bodyCostumeLayerContext, ZOOM(16.), ZOOM(40.));
+    CGContextAddCurveToPoint(bodyCostumeLayerContext,
+                             ZOOM(16.), ZOOM(46.), ZOOM(0.), ZOOM(46.),
+                             ZOOM(0.), ZOOM(40.));
+    
+    CGContextAddLineToPoint(bodyCostumeLayerContext, ZOOM(0.), ZOOM(53.));
+    CGContextAddCurveToPoint(bodyCostumeLayerContext,
+                             ZOOM(5.), ZOOM(58.), ZOOM(10.), ZOOM(60.),
+                             ZOOM(15.), ZOOM(53.));
+    CGContextAddLineToPoint(bodyCostumeLayerContext, ZOOM(12.), ZOOM(53.));
+    CGContextClosePath(bodyCostumeLayerContext);
+    
+    
+    CGContextStrokePath(bodyCostumeLayerContext);
+    
+    
+    CGContextDrawLayerAtPoint(actualContext, (CGPoint) {ZOOM(110.), ZOOM(150.)}, bodyCostumeLayer);
+    
+    CGContextRestoreGState(actualContext);
     
 }
 
