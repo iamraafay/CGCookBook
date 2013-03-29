@@ -42,6 +42,29 @@ void FaceShading(void *info, const CGFloat *in, CGFloat *out)
     *out++ = 1;
 }
 
+void ShouldersShading(void *info, const CGFloat *in, CGFloat *out) {
+    
+    size_t numberOfComponents = (size_t)info;
+    const CGFloat receivingVals = *in;
+    size_t k;
+    
+//    const CGFloat colors[] = {0.792, 0.098, 0.066, 1}; //202, 25, 17
+//    const CGFloat colors[] = {0.827, 0.047, 0.070, 1}; //211, 12, 18
+//    const CGFloat colors[] = {0.827, 0.037, 0.010, 1};
+    const CGFloat colors[] = {0.794372, 0, 0, 1};
+    
+    for (k = 0; k <= numberOfComponents; k++) {
+        *out = colors[k] * receivingVals;
+        
+        NSLog(@"Receiving Value:%f", receivingVals);
+        NSLog(@"k Val:%zu", k);
+        NSLog(@"Out:%f", *out);
+        
+    }
+    *out++ = 1;
+    
+}
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
@@ -299,7 +322,6 @@ void FaceShading(void *info, const CGFloat *in, CGFloat *out)
                                                         }, faceLayer);
     
     
-    CGContextSaveGState(actualContext);
     
     CGSize bodyCostumeLayerSize = CGSizeMake(ZOOM(80.), ZOOM(70.));
     CGLayerRef bodyCostumeLayer = CGLayerCreateWithContext(actualContext, bodyCostumeLayerSize, NULL);
@@ -310,6 +332,8 @@ void FaceShading(void *info, const CGFloat *in, CGFloat *out)
     
     
     //MARK: the shoulder with the tummy, the red stuff
+    
+    CGContextSaveGState(bodyCostumeLayerContext);
     CGContextBeginPath(bodyCostumeLayerContext);
     
     CGContextMoveToPoint(bodyCostumeLayerContext, ZOOM(0.), ZOOM(40.));
@@ -321,7 +345,12 @@ void FaceShading(void *info, const CGFloat *in, CGFloat *out)
                              ZOOM(72.), ZOOM(34.), ZOOM(72.), ZOOM(48.),
                              ZOOM(65), ZOOM(48.));
     
-    CGContextMoveToPoint(bodyCostumeLayerContext, ZOOM(68.), ZOOM(46.));
+    
+    
+    
+//    CGContextMoveToPoint(bodyCostumeLayerContext, ZOOM(68.), ZOOM(46.));
+//    CGContextAddLineToPoint(bodyCostumeLayerContext, ZOOM(68.), ZOOM(46.));
+    
     CGContextAddLineToPoint(bodyCostumeLayerContext, ZOOM(62.), ZOOM(25.));
     
     CGContextAddLineToPoint(bodyCostumeLayerContext, ZOOM(62.), ZOOM(26.5));
@@ -335,13 +364,46 @@ void FaceShading(void *info, const CGFloat *in, CGFloat *out)
                              ZOOM(16.), ZOOM(46.), ZOOM(0.), ZOOM(46.),
                              ZOOM(0.), ZOOM(40.));
     
-    CGContextStrokePath(bodyCostumeLayerContext);
+//    CGContextStrokePath(bodyCostumeLayerContext);
     
+    
+    CGColorSpaceRef deviceRGBColorSpace = CGColorSpaceCreateDeviceRGB();
+    size_t numberOfColorSpceComponents = CGColorSpaceGetNumberOfComponents(deviceRGBColorSpace);
+    
+    const CGFloat shouldersDomain[] = { 0, 1};
+    const CGFloat shouldersRange[] = {0, 1, 0, 1, 0, 1, 0, 1};
+    
+    CGFunctionCallbacks shouldersShadingFunctionCallbacks = {0, ShouldersShading, NULL};
+    
+    CGFunctionRef shouldersShadingFunction = CGFunctionCreate((void*)numberOfColorSpceComponents,
+                                                              1, shouldersDomain,
+                                                              numberOfColorSpceComponents, shouldersRange,
+                                                              &shouldersShadingFunctionCallbacks);
+    
+    CGShadingRef shouldersShade = CGShadingCreateAxial(deviceRGBColorSpace,
+                                                       (CGPoint) {ZOOM(46.), ZOOM(45.5)} ,
+                                                       (CGPoint) {ZOOM(46.), ZOOM(0)},
+//                                                       (CGPoint) {ZOOM(80.), ZOOM(80.)},
+//                                                       (CGPoint) {ZOOM(10.), ZOOM(10.)},
+                                                       shouldersShadingFunction,
+                                                       false, false);
+    CGContextClip(bodyCostumeLayerContext);
+    
+    
+    
+    CGContextDrawShading(bodyCostumeLayerContext, shouldersShade);
+    CGContextRestoreGState(bodyCostumeLayerContext);
     
     //MARK: the hands, white stuff
     
     //Right Hand
+    
+    CGContextSaveGState(bodyCostumeLayerContext);
+    
     CGContextBeginPath(bodyCostumeLayerContext);
+    
+    CGContextSetFillColorWithColor(bodyCostumeLayerContext, [[UIColor whiteColor] CGColor]);
+    CGContextSetStrokeColorWithColor(bodyCostumeLayerContext, [[UIColor blackColor] CGColor]);
     
     CGContextMoveToPoint(bodyCostumeLayerContext, ZOOM(80.), ZOOM(40.));
     CGContextAddLineToPoint(bodyCostumeLayerContext, ZOOM(80.), ZOOM(50.));
@@ -353,8 +415,13 @@ void FaceShading(void *info, const CGFloat *in, CGFloat *out)
     CGContextAddCurveToPoint(bodyCostumeLayerContext,
                              ZOOM(72.), ZOOM(48.), ZOOM(72.), ZOOM(34.),
                              ZOOM(80), ZOOM(40.));
+    CGContextClosePath(bodyCostumeLayerContext);
+    
+    CGContextDrawPath(bodyCostumeLayerContext, kCGPathFillStroke);
     
     //Left hand
+    
+    CGContextBeginPath(bodyCostumeLayerContext);
     CGContextMoveToPoint(bodyCostumeLayerContext, ZOOM(16.), ZOOM(40.));
     CGContextAddCurveToPoint(bodyCostumeLayerContext,
                              ZOOM(16.), ZOOM(46.), ZOOM(0.), ZOOM(46.),
@@ -367,13 +434,11 @@ void FaceShading(void *info, const CGFloat *in, CGFloat *out)
     CGContextAddLineToPoint(bodyCostumeLayerContext, ZOOM(12.), ZOOM(53.));
     CGContextClosePath(bodyCostumeLayerContext);
     
+    CGContextDrawPath(bodyCostumeLayerContext, kCGPathFillStroke);
     
-    CGContextStrokePath(bodyCostumeLayerContext);
-    
+    CGContextRestoreGState(bodyCostumeLayerContext);
     
     CGContextDrawLayerAtPoint(actualContext, (CGPoint) {ZOOM(110.), ZOOM(150.)}, bodyCostumeLayer);
-    
-    CGContextRestoreGState(actualContext);
     
 }
 
